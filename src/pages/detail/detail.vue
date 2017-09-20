@@ -114,7 +114,7 @@ export default {
 	methods:{
 		// 获取轮播图片数据
 		getDetailSlider(){
-			axios.get('/mock/detail/detail_slider.json')
+			axios.get('https://d-gitlong.github.io/vue-douban/src/mock/detail/detail_slider.json')
 			.then((response)=>{
 				this.sliders = response.data.list;
 			}).catch(function(error){

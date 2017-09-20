@@ -12,14 +12,14 @@ export default{
 		}
 	},
 	getSliders({commit,state}) {
-		axios.get('/mock/home/sliders.json').then((response)=>{
+		axios.get('https://d-gitlong.github.io/vue-douban/src/mock/home/sliders.json').then((response)=>{
 			if(response.data.list){
 				commit(types.GET_SLIDERS,response.data.list);
 			}
 		});
 	},
 	getHotProducts({commit,state}){
-		axios.get('/mock/products/products.json').then((response)=>{
+		axios.get('https://d-gitlong.github.io/vue-douban/src/mock/products/products.json').then((response)=>{
 			let result = response.data.list;
 			if(result){
 				commit(types.GET_HOT_PRODUCTS,result.slice(0,6));
@@ -29,7 +29,7 @@ export default{
 	getHotShops({commit,state}){
 		state.busy = true;
 		commit(types.IS_SHOW_LOADING_TIPS,true);
-		axios.get('/mock/home/hot_shop.json').then((response)=>{
+		axios.get('https://d-gitlong.github.io/vue-douban/src/mock/home/hot_shop.json').then((response)=>{
 			commit(types.IS_SHOW_LOADING_TIPS,false);
 			let result = response.data.list.slice(state.num-5,state.num);
 			if(result.length !== 0){
@@ -44,7 +44,7 @@ export default{
 	getProducts({commit,state}){
 		state.busy = true;
 		commit(types.IS_SHOW_LOADING_TIPS,true);
-		axios.get('/mock/products/products.json').then((response)=>{
+		axios.get('https://d-gitlong.github.io/vue-douban/src/mock/products/products.json').then((response)=>{
 			commit(types.IS_SHOW_LOADING_TIPS,false);
 			let result = response.data.list.slice(state.num-5,state.num);
 			if(result.length !== 0){

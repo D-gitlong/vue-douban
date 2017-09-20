@@ -48,7 +48,7 @@
 		},		
 		methods: {
 			getData(){
-				axios.get('/mock/products/products.json').then((response)=>{
+				axios.get('https://d-gitlong.github.io/vue-douban/src/mock/products/products.json').then((response)=>{
 					var result = response.data.list.slice(this.num-10,this.num);
 					if(result.length !== 0){
 						this.loading = false;
